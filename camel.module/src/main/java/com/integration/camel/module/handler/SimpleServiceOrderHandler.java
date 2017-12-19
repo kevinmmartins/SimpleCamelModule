@@ -20,14 +20,14 @@ public class SimpleServiceOrderHandler {
 		add(new SimpleServiceOrder(1l, "2017-1", "Mogi Guaçu"));
 	}
 
-	private Response add(SimpleServiceOrder so) {
+	public Response add(SimpleServiceOrder so) {
 		service.put(so.getId().intValue(), so);
 
 		return Response.created(URI.create("/personservice/person/get/" + so.getId())).build();
 	}
 
-	private SimpleServiceOrder getServiceOrderByLabel(int id) {
-		SimpleServiceOrder so = service.get(id);
+	public SimpleServiceOrder getServiceOrderByLabel(String label) {
+		SimpleServiceOrder so = service.get(1l);
 		if (so == null) {
 			ResponseBuilder builder = Response.status(Status.NOT_FOUND);
 			throw new WebApplicationException(builder.build());
@@ -36,7 +36,7 @@ public class SimpleServiceOrderHandler {
 		return so;
 	}
 
-	private Collection<SimpleServiceOrder> getServiceOrderList() {
+	public Collection<SimpleServiceOrder> getServiceOrderList() {
 		if (service == null) {
 			ResponseBuilder builder = Response.status(Status.NOT_FOUND);
 			throw new WebApplicationException(builder.build());

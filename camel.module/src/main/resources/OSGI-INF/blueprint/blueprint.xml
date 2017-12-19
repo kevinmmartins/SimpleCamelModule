@@ -6,7 +6,7 @@
         http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
 
 	<bean id="serviceHandler"
-		class="com.integration.camel.module.to.handler.SimpleServiceOrderHandler"
+		class="com.integration.camel.module.handler.SimpleServiceOrderHandler"
 		init-method="init" />
 
 	<camelContext xmlns="http://camel.apache.org/schema/blueprint">
