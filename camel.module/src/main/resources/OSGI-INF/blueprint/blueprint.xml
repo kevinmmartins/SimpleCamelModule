@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+        http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+	<bean id="serviceHandler"
+		class="com.integration.camel.module.to.handler.SimpleServiceOrderHandler"
+		init-method="init" />
+
+	<camelContext xmlns="http://camel.apache.org/schema/blueprint">
+		<route id="getServiceOrderByLabel">
+			<from uri="direct-vm:getServiceOrderByLabel" />
+			<transform>
+				<simple>${header.id}</simple>
+			</transform>
+			<bean method="getServiceOrderByLabel" ref="serviceHandler" />
+		</route>
+		<route id="getServiceOrderList">
+			<from uri="direct-vm:getServiceOrderList" />
+			<bean method="getServiceOrderList" ref="serviceHandler" />
+		</route>
+		<route id="createNewServiceOrder">
+			<from uri="direct-vm:createNewServiceOrder" />
+			<transform>
+				<simple>${header.id}</simple>
+			</transform>
+			<bean method="createNewServiceOrder" ref="serviceHandler" />
+		</route>
+	</camelContext>
+
+</blueprint>
