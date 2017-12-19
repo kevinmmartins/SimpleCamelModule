@@ -1,6 +1,5 @@
 package com.integration.camel.module.handler;
 
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class SimpleServiceOrderHandler {
 	public Response add(SimpleServiceOrder so) {
 		service.add(so);
 
-		return Response.created(URI.create("/personservice/person/get/" + so.getId())).build();
+		return Response.status(Response.Status.CREATED).build();
 	}
 
 	public SimpleServiceOrder getServiceOrderByLabel(String label) {

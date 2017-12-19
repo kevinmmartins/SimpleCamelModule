@@ -2,6 +2,9 @@ package com.integration.camel.module.to;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class SimpleServiceOrder implements Serializable {
 
 	/**
