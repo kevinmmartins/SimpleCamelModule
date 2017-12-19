@@ -2,7 +2,6 @@ package com.integration.camel.module.handler;
 
 import java.net.URI;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import javax.ws.rs.WebApplicationException;
