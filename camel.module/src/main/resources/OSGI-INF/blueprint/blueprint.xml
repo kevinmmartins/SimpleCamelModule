@@ -13,7 +13,7 @@
 		<route id="getServiceOrderByLabel">
 			<from uri="direct-vm:getServiceOrderByLabel" />
 			<transform>
-				<simple>${header.id}</simple>
+				<simple>${header.label}</simple>
 			</transform>
 			<bean method="getServiceOrderByLabel" ref="serviceHandler" />
 		</route>
@@ -23,9 +23,6 @@
 		</route>
 		<route id="createNewServiceOrder">
 			<from uri="direct-vm:createNewServiceOrder" />
-			<transform>
-				<simple>${header.id}</simple>
-			</transform>
 			<bean method="createNewServiceOrder" ref="serviceHandler" />
 		</route>
 	</camelContext>
