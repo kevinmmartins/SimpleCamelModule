@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<camel.version>3.0.0</camel.version>
+		<camel.version>3.0.1</camel.version>
 		<cxf.version>3.3.5</cxf.version>
 		<spring.version>5.2.3.RELEASE</spring.version>
 		<activemq.version>5.14.5</activemq.version>
