@@ -1,0 +1,22 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/camel.module"
+  schedule:
+    interval: daily
+    time: "08:00"
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: org.springframework:spring-web
+    versions:
+    - 5.3.3
+    - 5.3.4
+    - 5.3.5
+  - dependency-name: org.springframework:spring-core
+    versions:
+    - 5.3.3
+    - 5.3.4
+    - 5.3.5
+  - dependency-name: org.apache.cxf:cxf-rt-transports-http-jetty
+    versions:
+    - 3.4.2
